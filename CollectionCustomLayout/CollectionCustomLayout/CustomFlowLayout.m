@@ -11,8 +11,10 @@
 @interface CustomFlowLayout()
 
 @property (nonatomic, assign) CGFloat collectionViewWidth;
-
 @property (nonatomic, assign) CGFloat collectionViewHeight;
+
+@property (nonatomic, assign) CGFloat minCenterX;
+@property (nonatomic, assign) CGFloat maxCenterX;
 
 // 正在显示的页面中每个cell平均宽度
 @property (nonatomic, assign) CGFloat averageItemWidth;
@@ -27,35 +29,48 @@
 
 @implementation CustomFlowLayout
 
+- (instancetype)init{
+    if (self = [super init]) {
+        self.bigItemScaleSmallItem = 2;
+        self.smallItemCountOneSide = 2;
+    }
+    return self;
+}
+
 - (void)prepareLayout{
+    NSInteger itemCountOnFrame = self.smallItemCountOneSide*2 + 1;
+    NSInteger similarSmallItemCount = self.smallItemCountOneSide*2 + self.bigItemScaleSmallItem;
     
     self.collectionViewWidth = self.collectionView.bounds.size.width;
     self.collectionViewHeight = self.collectionView.bounds.size.height;
-    self.averageItemWidth = self.collectionViewWidth/5;
-    self.normalItemWidth = self.collectionViewWidth/6;
+    self.averageItemWidth = self.collectionViewWidth/itemCountOnFrame;
+    self.normalItemWidth = self.collectionViewWidth/similarSmallItemCount;
     
-    self.horizontalEdgePadding = self.collectionViewWidth/3;
+    self.horizontalEdgePadding = self.collectionViewWidth * self.smallItemCountOneSide / similarSmallItemCount;
+    NSInteger count = [self.collectionView numberOfItemsInSection:0];
+    self.minCenterX = self.horizontalEdgePadding + self.normalItemWidth*self.bigItemScaleSmallItem/2;
+    self.maxCenterX = self.horizontalEdgePadding + self.normalItemWidth*(count-1) + self.normalItemWidth*self.bigItemScaleSmallItem;
     
-//    self.scrollDirection = UICollectionViewScrollDirectionHorizontal;
     
     [self setUpLayoutAttributes];
 }
 - (void)setUpLayoutAttributes{
-    NSInteger count = [self.collectionView numberOfItemsInSection:0];
-    CGFloat minCenterX = self.horizontalEdgePadding + self.normalItemWidth;
-    CGFloat maxCenterX = self.horizontalEdgePadding + self.normalItemWidth * count;
+   
     CGFloat contentOffsetX = self.collectionView.contentOffset.x;
     CGFloat centerX = self.collectionViewWidth/2 + contentOffsetX;
-    centerX = centerX>=minCenterX ? centerX : minCenterX;
-    centerX = centerX<=maxCenterX ? centerX : maxCenterX;
+    centerX = centerX>=self.minCenterX ? centerX : self.minCenterX;
+    centerX = centerX<=self.maxCenterX ? centerX : self.maxCenterX;
     
     NSInteger divisor = (centerX-self.horizontalEdgePadding) / self.normalItemWidth;
     CGFloat mod = centerX-self.horizontalEdgePadding - divisor * self.normalItemWidth;
     
+     NSInteger count = [self.collectionView numberOfItemsInSection:0];
     NSMutableArray *marr = [NSMutableArray arrayWithCapacity:count];
     
-    NSInteger bigOne = divisor-1;
-    CGFloat offset = mod;
+    // 第一个变大的item
+    NSInteger bigOne = divisor-self.bigItemScaleSmallItem/2;
+    // 第一个变大的item失去的宽度
+    CGFloat offset = (self.bigItemScaleSmallItem-1)*self.normalItemWidth * mod/self.normalItemWidth;
     CGFloat maxX = self.horizontalEdgePadding;
     for (int i=0; i<count; i++) {
         NSIndexPath *indexPath = [NSIndexPath indexPathForItem:i inSection:0];
@@ -66,7 +81,7 @@
         if (i < bigOne) {
             width = self.normalItemWidth;
         }else if(i == bigOne){
-            width = self.normalItemWidth + self.normalItemWidth - offset;
+            width = self.normalItemWidth*self.bigItemScaleSmallItem - offset;
         }else if(i == bigOne+1){
             width = self.normalItemWidth + offset;
         }else {
@@ -84,29 +99,28 @@
 }
 - (CGPoint)targetContentOffsetForProposedContentOffset:(CGPoint)proposedContentOffset withScrollingVelocity:(CGPoint)velocity{
     
-    NSInteger count = [self.collectionView numberOfItemsInSection:0];
-    CGFloat minCenterX = self.horizontalEdgePadding + self.normalItemWidth;
-    CGFloat maxCenterX = self.horizontalEdgePadding + self.normalItemWidth * count;
     CGFloat contentOffsetX = proposedContentOffset.x;
     CGFloat centerX = self.collectionViewWidth/2 + contentOffsetX;
-    centerX = centerX>=minCenterX ? centerX : minCenterX;
-    centerX = centerX<=maxCenterX ? centerX : maxCenterX;
+    centerX = centerX>=self.minCenterX ? centerX : self.minCenterX;
+    centerX = centerX<=self.maxCenterX ? centerX : self.maxCenterX;
     
     NSInteger divisor = (centerX-self.horizontalEdgePadding) / self.normalItemWidth;
     CGFloat mod = centerX-self.horizontalEdgePadding - divisor * self.normalItemWidth;
     
+    // 第一个变大的item
+    NSInteger bigOne = divisor-self.bigItemScaleSmallItem/2;
+    
     CGFloat targetX = 0;
     if (mod < self.normalItemWidth/2) {
         // 左边大
-        targetX = self.horizontalEdgePadding + self.normalItemWidth * (divisor);
+        targetX = self.horizontalEdgePadding + self.normalItemWidth*bigOne + self.normalItemWidth*(self.bigItemScaleSmallItem/2);
     }else {
         // 右边大
-        targetX = self.horizontalEdgePadding + self.normalItemWidth * (divisor+1);
+        targetX = self.horizontalEdgePadding + self.normalItemWidth*bigOne + self.normalItemWidth*(self.bigItemScaleSmallItem/2+1);
     }
     targetX -= self.collectionViewWidth/2;
     CGPoint targetPoint = CGPointMake(targetX, proposedContentOffset.y);
-    NSLog(@"proposedContentOffset:%@ targetPoint:%@ ",NSStringFromCGPoint(proposedContentOffset),NSStringFromCGPoint(targetPoint));
-    
+    NSLog(@"bigOne:%ld proposed:%@ target:%@ ",bigOne,NSStringFromCGPoint(proposedContentOffset),NSStringFromCGPoint(targetPoint));
     
     return targetPoint;
 }
@@ -116,7 +130,7 @@
 }
 - (CGSize)collectionViewContentSize{
     NSInteger count = [self.collectionView numberOfItemsInSection:0];
-    CGFloat contentWidth = self.horizontalEdgePadding * 2 + self.normalItemWidth * count + self.normalItemWidth;
+    CGFloat contentWidth = self.horizontalEdgePadding * 2 + self.normalItemWidth * (count-1) + self.normalItemWidth*self.bigItemScaleSmallItem;
     CGSize contentSize = CGSizeMake(contentWidth, self.collectionView.bounds.size.height);
     
     return contentSize;

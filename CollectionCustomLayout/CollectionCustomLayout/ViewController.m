@@ -30,6 +30,8 @@
 // 创建视图控件
 - (void)setUpViews{
     self.flowLayout = [[CustomFlowLayout alloc] init];
+    self.flowLayout.bigItemScaleSmallItem = 10;
+    self.flowLayout.smallItemCountOneSide = 2;
     
     UICollectionView *collectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:self.flowLayout];
     collectionView.delegate = self;
@@ -56,7 +58,7 @@
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    return 100;
+    return 1000;
 }
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     

@@ -10,4 +10,10 @@
 
 @interface CustomFlowLayout : UICollectionViewLayout
 
+// 大球宽度是小球的多少倍
+@property (nonatomic, assign) NSInteger bigItemScaleSmallItem;
+
+// 大球一边留多少个小球显示
+@property (nonatomic, assign) NSInteger smallItemCountOneSide;
+
 @end
