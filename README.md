@@ -1,0 +1,2 @@
+# CollectionCustomLayout
+使用collectionview实现视图效果，采用自定义Layout的方法布局
