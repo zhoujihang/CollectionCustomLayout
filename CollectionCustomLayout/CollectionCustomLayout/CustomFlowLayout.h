@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CustomFlowLayout : UICollectionViewFlowLayout
+@interface CustomFlowLayout : UICollectionViewLayout
 
 @end

@@ -18,6 +18,8 @@
 @property (nonatomic, assign) CGFloat averageItemWidth;
 // 普通cell的宽度（未变大时）
 @property (nonatomic, assign) CGFloat normalItemWidth;
+@property (nonatomic, assign) CGFloat horizontalEdgePadding;
+
 
 @property (nonatomic, strong) NSArray *layoutAttributes;
 
@@ -32,31 +34,29 @@
     self.averageItemWidth = self.collectionViewWidth/5;
     self.normalItemWidth = self.collectionViewWidth/6;
     
-    self.minimumLineSpacing = 0;
-    self.minimumInteritemSpacing = 0;
-    CGFloat horizontalPadding = self.collectionViewWidth/3;
-    self.sectionInset = UIEdgeInsetsMake(0, horizontalPadding, 0, horizontalPadding);
-    self.scrollDirection = UICollectionViewScrollDirectionHorizontal;
+    self.horizontalEdgePadding = self.collectionViewWidth/3;
+    
+//    self.scrollDirection = UICollectionViewScrollDirectionHorizontal;
     
     [self setUpLayoutAttributes];
 }
 - (void)setUpLayoutAttributes{
     NSInteger count = [self.collectionView numberOfItemsInSection:0];
-    CGFloat minCenterX = self.sectionInset.left + self.normalItemWidth;
-    CGFloat maxCenterX = self.sectionInset.left + self.normalItemWidth * count;
+    CGFloat minCenterX = self.horizontalEdgePadding + self.normalItemWidth;
+    CGFloat maxCenterX = self.horizontalEdgePadding + self.normalItemWidth * count;
     CGFloat contentOffsetX = self.collectionView.contentOffset.x;
     CGFloat centerX = self.collectionViewWidth/2 + contentOffsetX;
     centerX = centerX>=minCenterX ? centerX : minCenterX;
     centerX = centerX<=maxCenterX ? centerX : maxCenterX;
     
-    NSInteger divisor = (centerX-self.sectionInset.left) / self.normalItemWidth;
-    CGFloat mod = centerX-self.sectionInset.left - divisor * self.normalItemWidth;
+    NSInteger divisor = (centerX-self.horizontalEdgePadding) / self.normalItemWidth;
+    CGFloat mod = centerX-self.horizontalEdgePadding - divisor * self.normalItemWidth;
     
     NSMutableArray *marr = [NSMutableArray arrayWithCapacity:count];
     
     NSInteger bigOne = divisor-1;
     CGFloat offset = mod;
-    CGFloat maxX = self.sectionInset.left;
+    CGFloat maxX = self.horizontalEdgePadding;
     for (int i=0; i<count; i++) {
         NSIndexPath *indexPath = [NSIndexPath indexPathForItem:i inSection:0];
         UICollectionViewLayoutAttributes *layoutAttr = [UICollectionViewLayoutAttributes layoutAttributesForCellWithIndexPath:indexPath];
@@ -85,23 +85,23 @@
 - (CGPoint)targetContentOffsetForProposedContentOffset:(CGPoint)proposedContentOffset withScrollingVelocity:(CGPoint)velocity{
     
     NSInteger count = [self.collectionView numberOfItemsInSection:0];
-    CGFloat minCenterX = self.sectionInset.left + self.normalItemWidth;
-    CGFloat maxCenterX = self.sectionInset.left + self.normalItemWidth * count;
+    CGFloat minCenterX = self.horizontalEdgePadding + self.normalItemWidth;
+    CGFloat maxCenterX = self.horizontalEdgePadding + self.normalItemWidth * count;
     CGFloat contentOffsetX = proposedContentOffset.x;
     CGFloat centerX = self.collectionViewWidth/2 + contentOffsetX;
     centerX = centerX>=minCenterX ? centerX : minCenterX;
     centerX = centerX<=maxCenterX ? centerX : maxCenterX;
     
-    NSInteger divisor = (centerX-self.sectionInset.left) / self.normalItemWidth;
-    CGFloat mod = centerX-self.sectionInset.left - divisor * self.normalItemWidth;
+    NSInteger divisor = (centerX-self.horizontalEdgePadding) / self.normalItemWidth;
+    CGFloat mod = centerX-self.horizontalEdgePadding - divisor * self.normalItemWidth;
     
     CGFloat targetX = 0;
     if (mod < self.normalItemWidth/2) {
         // 左边大
-        targetX = self.sectionInset.left + self.normalItemWidth * (divisor);
+        targetX = self.horizontalEdgePadding + self.normalItemWidth * (divisor);
     }else {
         // 右边大
-        targetX = self.sectionInset.left + self.normalItemWidth * (divisor+1);
+        targetX = self.horizontalEdgePadding + self.normalItemWidth * (divisor+1);
     }
     targetX -= self.collectionViewWidth/2;
     CGPoint targetPoint = CGPointMake(targetX, proposedContentOffset.y);
@@ -116,7 +116,7 @@
 }
 - (CGSize)collectionViewContentSize{
     NSInteger count = [self.collectionView numberOfItemsInSection:0];
-    CGFloat contentWidth = self.sectionInset.left + self.sectionInset.right + self.normalItemWidth * count + self.normalItemWidth;
+    CGFloat contentWidth = self.horizontalEdgePadding * 2 + self.normalItemWidth * count + self.normalItemWidth;
     CGSize contentSize = CGSizeMake(contentWidth, self.collectionView.bounds.size.height);
     
     return contentSize;
