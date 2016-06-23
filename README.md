@@ -8,3 +8,5 @@
 
 
 ![](collectionCustomLayout.gif)
+
+mark：更多自定义layout的demo学习，可拜访[这里](https://github.com/dsxNiubility/SXPhotoShow)
