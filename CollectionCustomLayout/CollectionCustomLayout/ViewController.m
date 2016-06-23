@@ -24,13 +24,12 @@
     
     [self setUpViews];
     [self setUpConstraints];
-    
 }
 
 // 创建视图控件
 - (void)setUpViews{
     self.flowLayout = [[CustomFlowLayout alloc] init];
-    self.flowLayout.bigItemScaleSmallItem = 10;
+    self.flowLayout.bigItemScaleSmallItem = 6;
     self.flowLayout.smallItemCountOneSide = 2;
     
     UICollectionView *collectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:self.flowLayout];
