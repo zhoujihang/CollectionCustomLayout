@@ -1,0 +1,6 @@
+framework module Pods_CollectionCustomLayout {
+  umbrella header "Pods-CollectionCustomLayout-umbrella.h"
+
+  export *
+  module * { export * }
+}

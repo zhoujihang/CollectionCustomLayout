@@ -7,17 +7,45 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		47556DD5227003A700233D56 /* CustomCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 47556DCE227003A600233D56 /* CustomCollectionViewCell.m */; };
+		47556DD6227003A700233D56 /* CustomFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 47556DCF227003A600233D56 /* CustomFlowLayout.m */; };
+		47556DD7227003A700233D56 /* FlowCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47556DD3227003A600233D56 /* FlowCollectionViewController.m */; };
+		47556DDA227003C300233D56 /* CircleCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47556DD9227003C300233D56 /* CircleCollectionViewController.m */; };
+		47556DDD227004AA00233D56 /* ICarouselCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47556DDC227004AA00233D56 /* ICarouselCollectionViewController.m */; };
+		47556DE62270076800233D56 /* XZCollectionDecorationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 47556DDF2270076800233D56 /* XZCollectionDecorationView.m */; };
+		47556DE82270076800233D56 /* XZCollectionViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 47556DE32270076800233D56 /* XZCollectionViewLayout.m */; };
+		47556DE92270076800233D56 /* XZCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 47556DE52270076800233D56 /* XZCollectionReusableView.m */; };
+		47556DEC2270085F00233D56 /* XZCardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 47556DEB2270085F00233D56 /* XZCardView.m */; };
 		47F4B3A31D1BC9720049C3AE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 47F4B3A21D1BC9720049C3AE /* main.m */; };
 		47F4B3A61D1BC9720049C3AE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 47F4B3A51D1BC9720049C3AE /* AppDelegate.m */; };
 		47F4B3AC1D1BC9720049C3AE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47F4B3AA1D1BC9720049C3AE /* Main.storyboard */; };
 		47F4B3AE1D1BC9720049C3AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 47F4B3AD1D1BC9720049C3AE /* Assets.xcassets */; };
 		47F4B3B11D1BC9720049C3AE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47F4B3AF1D1BC9720049C3AE /* LaunchScreen.storyboard */; };
-		47F4B3BC1D1BC9970049C3AE /* CustomCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 47F4B3B91D1BC9970049C3AE /* CustomCollectionViewCell.m */; };
-		47F4B3BD1D1BC9970049C3AE /* CustomFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 47F4B3BB1D1BC9970049C3AE /* CustomFlowLayout.m */; };
 		47F4B3C01D1BC9A20049C3AE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47F4B3BF1D1BC9A20049C3AE /* ViewController.m */; };
+		F2B8DCA6A266F3EC231A549C /* Pods_CollectionCustomLayout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 125D275324E43594098B7FE2 /* Pods_CollectionCustomLayout.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		125D275324E43594098B7FE2 /* Pods_CollectionCustomLayout.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CollectionCustomLayout.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		19B848FADB8E12E65409849F /* Pods-CollectionCustomLayout.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CollectionCustomLayout.release.xcconfig"; path = "Pods/Target Support Files/Pods-CollectionCustomLayout/Pods-CollectionCustomLayout.release.xcconfig"; sourceTree = "<group>"; };
+		47556DCD227003A600233D56 /* CustomFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomFlowLayout.h; sourceTree = "<group>"; };
+		47556DCE227003A600233D56 /* CustomCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCollectionViewCell.m; sourceTree = "<group>"; };
+		47556DCF227003A600233D56 /* CustomFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomFlowLayout.m; sourceTree = "<group>"; };
+		47556DD0227003A600233D56 /* CustomCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCollectionViewCell.h; sourceTree = "<group>"; };
+		47556DD3227003A600233D56 /* FlowCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlowCollectionViewController.m; sourceTree = "<group>"; };
+		47556DD4227003A600233D56 /* FlowCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlowCollectionViewController.h; sourceTree = "<group>"; };
+		47556DD8227003C300233D56 /* CircleCollectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CircleCollectionViewController.h; sourceTree = "<group>"; };
+		47556DD9227003C300233D56 /* CircleCollectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CircleCollectionViewController.m; sourceTree = "<group>"; };
+		47556DDB227004AA00233D56 /* ICarouselCollectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ICarouselCollectionViewController.h; sourceTree = "<group>"; };
+		47556DDC227004AA00233D56 /* ICarouselCollectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ICarouselCollectionViewController.m; sourceTree = "<group>"; };
+		47556DDE2270076800233D56 /* XZCollectionViewLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XZCollectionViewLayout.h; sourceTree = "<group>"; };
+		47556DDF2270076800233D56 /* XZCollectionDecorationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XZCollectionDecorationView.m; sourceTree = "<group>"; };
+		47556DE02270076800233D56 /* XZCollectionReusableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XZCollectionReusableView.h; sourceTree = "<group>"; };
+		47556DE32270076800233D56 /* XZCollectionViewLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XZCollectionViewLayout.m; sourceTree = "<group>"; };
+		47556DE42270076800233D56 /* XZCollectionDecorationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XZCollectionDecorationView.h; sourceTree = "<group>"; };
+		47556DE52270076800233D56 /* XZCollectionReusableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XZCollectionReusableView.m; sourceTree = "<group>"; };
+		47556DEA2270085F00233D56 /* XZCardView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XZCardView.h; sourceTree = "<group>"; };
+		47556DEB2270085F00233D56 /* XZCardView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XZCardView.m; sourceTree = "<group>"; };
 		47F4B39E1D1BC9720049C3AE /* CollectionCustomLayout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CollectionCustomLayout.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		47F4B3A21D1BC9720049C3AE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		47F4B3A41D1BC9720049C3AE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -26,12 +54,9 @@
 		47F4B3AD1D1BC9720049C3AE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		47F4B3B01D1BC9720049C3AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		47F4B3B21D1BC9720049C3AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		47F4B3B81D1BC9970049C3AE /* CustomCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCollectionViewCell.h; sourceTree = "<group>"; };
-		47F4B3B91D1BC9970049C3AE /* CustomCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCollectionViewCell.m; sourceTree = "<group>"; };
-		47F4B3BA1D1BC9970049C3AE /* CustomFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomFlowLayout.h; sourceTree = "<group>"; };
-		47F4B3BB1D1BC9970049C3AE /* CustomFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomFlowLayout.m; sourceTree = "<group>"; };
 		47F4B3BE1D1BC9A20049C3AE /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		47F4B3BF1D1BC9A20049C3AE /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		78A38314B46AAF395A0EB5C9 /* Pods-CollectionCustomLayout.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CollectionCustomLayout.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CollectionCustomLayout/Pods-CollectionCustomLayout.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,17 +64,67 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F2B8DCA6A266F3EC231A549C /* Pods_CollectionCustomLayout.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		20D949ED9BEF19F278D3BB4D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				125D275324E43594098B7FE2 /* Pods_CollectionCustomLayout.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		47556DCC227003A600233D56 /* Circle */ = {
+			isa = PBXGroup;
+			children = (
+				47556DD8227003C300233D56 /* CircleCollectionViewController.h */,
+				47556DD9227003C300233D56 /* CircleCollectionViewController.m */,
+				47556DCD227003A600233D56 /* CustomFlowLayout.h */,
+				47556DCF227003A600233D56 /* CustomFlowLayout.m */,
+				47556DCE227003A600233D56 /* CustomCollectionViewCell.m */,
+				47556DD0227003A600233D56 /* CustomCollectionViewCell.h */,
+			);
+			path = Circle;
+			sourceTree = "<group>";
+		};
+		47556DD1227003A600233D56 /* iCarousel */ = {
+			isa = PBXGroup;
+			children = (
+				47556DDB227004AA00233D56 /* ICarouselCollectionViewController.h */,
+				47556DDC227004AA00233D56 /* ICarouselCollectionViewController.m */,
+				47556DEA2270085F00233D56 /* XZCardView.h */,
+				47556DEB2270085F00233D56 /* XZCardView.m */,
+			);
+			path = iCarousel;
+			sourceTree = "<group>";
+		};
+		47556DD2227003A600233D56 /* Flow */ = {
+			isa = PBXGroup;
+			children = (
+				47556DD4227003A600233D56 /* FlowCollectionViewController.h */,
+				47556DD3227003A600233D56 /* FlowCollectionViewController.m */,
+				47556DDE2270076800233D56 /* XZCollectionViewLayout.h */,
+				47556DE32270076800233D56 /* XZCollectionViewLayout.m */,
+				47556DE42270076800233D56 /* XZCollectionDecorationView.h */,
+				47556DDF2270076800233D56 /* XZCollectionDecorationView.m */,
+				47556DE02270076800233D56 /* XZCollectionReusableView.h */,
+				47556DE52270076800233D56 /* XZCollectionReusableView.m */,
+			);
+			path = Flow;
+			sourceTree = "<group>";
+		};
 		47F4B3951D1BC9720049C3AE = {
 			isa = PBXGroup;
 			children = (
 				47F4B3A01D1BC9720049C3AE /* CollectionCustomLayout */,
 				47F4B39F1D1BC9720049C3AE /* Products */,
+				880C0BA8256B74835D52BD43 /* Pods */,
+				20D949ED9BEF19F278D3BB4D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -68,14 +143,9 @@
 				47F4B3A51D1BC9720049C3AE /* AppDelegate.m */,
 				47F4B3BE1D1BC9A20049C3AE /* ViewController.h */,
 				47F4B3BF1D1BC9A20049C3AE /* ViewController.m */,
-				47F4B3B81D1BC9970049C3AE /* CustomCollectionViewCell.h */,
-				47F4B3B91D1BC9970049C3AE /* CustomCollectionViewCell.m */,
-				47F4B3BA1D1BC9970049C3AE /* CustomFlowLayout.h */,
-				47F4B3BB1D1BC9970049C3AE /* CustomFlowLayout.m */,
-				47F4B3AA1D1BC9720049C3AE /* Main.storyboard */,
-				47F4B3AD1D1BC9720049C3AE /* Assets.xcassets */,
-				47F4B3AF1D1BC9720049C3AE /* LaunchScreen.storyboard */,
-				47F4B3B21D1BC9720049C3AE /* Info.plist */,
+				47556DD2227003A600233D56 /* Flow */,
+				47556DCC227003A600233D56 /* Circle */,
+				47556DD1227003A600233D56 /* iCarousel */,
 				47F4B3A11D1BC9720049C3AE /* Supporting Files */,
 			);
 			path = CollectionCustomLayout;
@@ -84,9 +154,22 @@
 		47F4B3A11D1BC9720049C3AE /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				47F4B3AA1D1BC9720049C3AE /* Main.storyboard */,
+				47F4B3AD1D1BC9720049C3AE /* Assets.xcassets */,
+				47F4B3AF1D1BC9720049C3AE /* LaunchScreen.storyboard */,
+				47F4B3B21D1BC9720049C3AE /* Info.plist */,
 				47F4B3A21D1BC9720049C3AE /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		880C0BA8256B74835D52BD43 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				78A38314B46AAF395A0EB5C9 /* Pods-CollectionCustomLayout.debug.xcconfig */,
+				19B848FADB8E12E65409849F /* Pods-CollectionCustomLayout.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -96,9 +179,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 47F4B3B51D1BC9720049C3AE /* Build configuration list for PBXNativeTarget "CollectionCustomLayout" */;
 			buildPhases = (
+				8A6524892D6A95CC10DBF128 /* [CP] Check Pods Manifest.lock */,
 				47F4B39A1D1BC9720049C3AE /* Sources */,
 				47F4B39B1D1BC9720049C3AE /* Frameworks */,
 				47F4B39C1D1BC9720049C3AE /* Resources */,
+				2CB943B9F852F1B718387715 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -120,6 +205,8 @@
 				TargetAttributes = {
 					47F4B39D1D1BC9720049C3AE = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 5NKN37L53L;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -154,16 +241,70 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2CB943B9F852F1B718387715 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-CollectionCustomLayout/Pods-CollectionCustomLayout-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/iCarousel/iCarousel.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/iCarousel.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CollectionCustomLayout/Pods-CollectionCustomLayout-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8A6524892D6A95CC10DBF128 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CollectionCustomLayout-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		47F4B39A1D1BC9720049C3AE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				47556DDD227004AA00233D56 /* ICarouselCollectionViewController.m in Sources */,
 				47F4B3A61D1BC9720049C3AE /* AppDelegate.m in Sources */,
 				47F4B3A31D1BC9720049C3AE /* main.m in Sources */,
-				47F4B3BC1D1BC9970049C3AE /* CustomCollectionViewCell.m in Sources */,
-				47F4B3BD1D1BC9970049C3AE /* CustomFlowLayout.m in Sources */,
 				47F4B3C01D1BC9A20049C3AE /* ViewController.m in Sources */,
+				47556DDA227003C300233D56 /* CircleCollectionViewController.m in Sources */,
+				47556DD5227003A700233D56 /* CustomCollectionViewCell.m in Sources */,
+				47556DE62270076800233D56 /* XZCollectionDecorationView.m in Sources */,
+				47556DD7227003A700233D56 /* FlowCollectionViewController.m in Sources */,
+				47556DE92270076800233D56 /* XZCollectionReusableView.m in Sources */,
+				47556DE82270076800233D56 /* XZCollectionViewLayout.m in Sources */,
+				47556DEC2270085F00233D56 /* XZCardView.m in Sources */,
+				47556DD6227003A700233D56 /* CustomFlowLayout.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -226,7 +367,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -264,7 +405,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -273,23 +414,31 @@
 		};
 		47F4B3B61D1BC9720049C3AE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 78A38314B46AAF395A0EB5C9 /* Pods-CollectionCustomLayout.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 5NKN37L53L;
 				INFOPLIST_FILE = CollectionCustomLayout/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = zjh.CollectionCustomLayout;
+				PRODUCT_BUNDLE_IDENTIFIER = xiaozhu.com.XZTenant.XZTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "match Development xiaozhu.com.XZTenant.XZTest";
 			};
 			name = Debug;
 		};
 		47F4B3B71D1BC9720049C3AE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 19B848FADB8E12E65409849F /* Pods-CollectionCustomLayout.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = CollectionCustomLayout/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = zjh.CollectionCustomLayout;
+				PRODUCT_BUNDLE_IDENTIFIER = xiaozhu.com.XZTenant.XZTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Release;
 		};
@@ -312,6 +461,7 @@
 				47F4B3B71D1BC9720049C3AE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
